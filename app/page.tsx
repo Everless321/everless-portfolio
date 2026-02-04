@@ -26,7 +26,7 @@ export default function Home() {
 
           {/* Bio */}
           <p className="animate-fade-in-up animation-delay-200 text-lg text-black/50 max-w-md mx-auto mb-8">
-            热爱开源，喜欢创造有趣的工具。
+            敲代码就是瘾大。
           </p>
 
           {/* Social Links */}
