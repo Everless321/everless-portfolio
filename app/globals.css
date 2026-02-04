@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --accent: #ff6b9d;
-  --accent-dark: #e91e8c;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --accent: #0071e3;
 }
 
 @theme inline {
@@ -28,145 +27,35 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Kuromi avatar frame */
-.kuromi-frame {
-  position: relative;
-  display: inline-block;
-}
-
-.kuromi-frame::before {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border: 3px solid #ff6b9d;
-  z-index: -1;
-}
-
-/* Kuromi ears */
-.kuromi-ears {
-  position: absolute;
-  top: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 40px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.kuromi-ears::before,
-.kuromi-ears::after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 36px;
-  background: linear-gradient(180deg, #1a1a1a 60%, #ff6b9d 100%);
-  border-radius: 50% 50% 45% 45%;
-  border: 3px solid #ff6b9d;
-  top: 0;
-}
-
-.kuromi-ears::before {
-  left: 8px;
-  transform: rotate(-20deg);
-}
-
-.kuromi-ears::after {
-  right: 8px;
-  transform: rotate(20deg);
-}
-
-/* Skull decoration */
-.kuromi-skull {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 28px;
-  height: 24px;
-  background: #ff6b9d;
-  border-radius: 50% 50% 45% 45%;
-  z-index: 20;
-}
-
-.kuromi-skull::before {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 10px;
-  background: #ff6b9d;
-  border-radius: 0 0 4px 4px;
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 50% 50%, 15% 100%);
-}
-
-.kuromi-skull::after {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 6px;
-  background:
-    radial-gradient(circle 3px at 25% 50%, #0a0a0a 100%, transparent 100%),
-    radial-gradient(circle 3px at 75% 50%, #0a0a0a 100%, transparent 100%);
-}
-
 /* Project card */
 .project-card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 24px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 107, 157, 0.3);
-  box-shadow: 0 20px 40px -20px rgba(255, 107, 157, 0.3);
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 20px 40px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Gradient text */
-.text-gradient-pink {
-  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #ff6b9d 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glow button */
-.btn-pink {
-  background: linear-gradient(135deg, #ff6b9d 0%, #e91e8c 100%);
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.btn-pink:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px -10px rgba(255, 107, 157, 0.6);
-}
-
-/* Floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+/* Avatar ring */
+.avatar-ring {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3px;
+  border-radius: 50%;
 }
 
 /* Fade in */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -175,25 +64,15 @@ body {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .animation-delay-100 { animation-delay: 0.1s; opacity: 0; }
 .animation-delay-200 { animation-delay: 0.2s; opacity: 0; }
 .animation-delay-300 { animation-delay: 0.3s; opacity: 0; }
-.animation-delay-400 { animation-delay: 0.4s; opacity: 0; }
-
-/* Background grid */
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
-  .animate-float,
   .animate-fade-in-up {
     animation: none;
     opacity: 1;
