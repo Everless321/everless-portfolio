@@ -89,24 +89,41 @@ export default function Home() {
               </div>
             </a>
 
-            {/* Coming Soon Card */}
-            <div className="project-card p-6 opacity-50 cursor-default">
+            {/* Iris Card */}
+            <a
+              href="https://github.com/Everless321/Iris"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card p-6 group"
+            >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center shrink-0">
-                  <svg className="w-6 h-6 text-black/20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                  </svg>
-                </div>
+                <img
+                  src="/iris-icon.png"
+                  alt="Iris"
+                  width={48}
+                  height={48}
+                  className="rounded-xl shrink-0 group-hover:scale-105 transition-transform"
+                />
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-black/30 mb-1">
-                    Coming Soon
+                  <h3 className="font-semibold text-[#0a0a0a] mb-1 group-hover:text-[#0071e3] transition-colors">
+                    Iris
                   </h3>
-                  <p className="text-sm text-black/30">
-                    更多项目即将到来
+                  <p className="text-sm text-black/50 line-clamp-2">
+                    高性能多级转发控制平台，Rust 写的 N 跳级联 + mTLS + Web 面板
                   </p>
                 </div>
               </div>
-            </div>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {["Rust", "Tokio", "gRPC", "React"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-0.5 text-xs rounded-md bg-black/5 text-black/40"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </a>
           </div>
         </div>
       </section>
