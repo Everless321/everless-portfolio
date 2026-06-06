@@ -55,7 +55,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* dYm Card */}
             <a
-              href="https://github.com/Everless321/dYm"
+              href="https://dym.everless.app"
               target="_blank"
               rel="noopener noreferrer"
               className="project-card p-6 group"
@@ -91,7 +91,7 @@ export default function Home() {
 
             {/* Iris Card */}
             <a
-              href="https://github.com/Everless321/Iris"
+              href="https://iris.everless.app"
               target="_blank"
               rel="noopener noreferrer"
               className="project-card p-6 group"
